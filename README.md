@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/arxh-header.png" alt="Say Hello To Arx-h" width="100%" />
+  <img src="assets/arxh-header.png" alt="Say Hello To Arxh" width="100%" />
 </div>
 
 # arx-h
