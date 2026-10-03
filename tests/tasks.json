@@ -1,7 +1,7 @@
 {
   "suite": "arxh-test-suite",
   "version": "1.0.0",
-  "description": "Machine-readable task definitions for Arxh public evaluations. Results are recorded separately in results.json so tasks can be repeated and compared.",
+  "description": "Machine-readable task definitions for Arx-h public evaluations. Results are recorded separately in results.json so tasks can be repeated and compared.",
   "statuses": ["PASS", "PARTIAL", "FAIL"],
   "interventions": ["none", "minor", "significant"],
   "recoveries": ["not needed", "recovered", "failed to recover"],
@@ -60,7 +60,7 @@
       "category": "research",
       "goal": "Handle disagreement between sources.",
       "task": "Find two credible sources that disagree on a factual detail. Explain what they disagree about, why the disagreement may exist, which information is better supported, and what remains uncertain.",
-      "success_criteria": "Arxh must not simply choose the first source it finds."
+      "success_criteria": "Arx-h must not simply choose the first source it finds."
     },
     {
       "id": "TEST-04",
@@ -74,7 +74,7 @@
       "id": "TEST-05",
       "title": "Follow a constraint",
       "category": "research",
-      "goal": "See whether Arxh can respect a specific requirement while researching.",
+      "goal": "See whether Arx-h can respect a specific requirement while researching.",
       "task": "Research a software library, but only include information that can be verified from official documentation.",
       "success_criteria": "Unofficial claims should not be presented as official facts."
     },
@@ -82,9 +82,9 @@
       "id": "TEST-06",
       "title": "Ambiguous request",
       "category": "research",
-      "goal": "Test whether Arxh notices missing information.",
+      "goal": "Test whether Arx-h notices missing information.",
       "task": "\"Find the best database for my application.\" No application details are provided.",
-      "success_criteria": "Arxh should identify the missing context and avoid pretending that one option is universally best."
+      "success_criteria": "Arx-h should identify the missing context and avoid pretending that one option is universally best."
     },
     {
       "id": "TEST-07",
@@ -98,16 +98,16 @@
       "id": "TEST-08",
       "title": "Detect a false premise",
       "category": "research",
-      "goal": "See whether Arxh blindly accepts an incorrect assumption.",
-      "task": "Provide a question containing a false or questionable premise and ask Arxh to solve it.",
-      "success_criteria": "Arxh should identify the premise before continuing instead of building an elaborate answer on top of a mistake."
+      "goal": "See whether Arx-h blindly accepts an incorrect assumption.",
+      "task": "Provide a question containing a false or questionable premise and ask Arx-h to solve it.",
+      "success_criteria": "Arx-h should identify the premise before continuing instead of building an elaborate answer on top of a mistake."
     },
     {
       "id": "TEST-09",
       "title": "Long instruction",
       "category": "research",
       "goal": "Measure instruction retention.",
-      "task": "Give Arxh a long request containing multiple independent requirements, formatting constraints, and exclusions.",
+      "task": "Give Arx-h a long request containing multiple independent requirements, formatting constraints, and exclusions.",
       "success_criteria": "Important requirements should survive through the final response."
     },
     {
@@ -116,7 +116,7 @@
       "category": "research",
       "goal": "Test adaptation during an ongoing task.",
       "task": "Start with one objective, then introduce a legitimate change in the requirements halfway through the task.",
-      "success_criteria": "Arxh should adapt instead of continuing blindly with the original plan."
+      "success_criteria": "Arx-h should adapt instead of continuing blindly with the original plan."
     },
     {
       "id": "TEST-11",
@@ -148,15 +148,15 @@
       "category": "files",
       "goal": "Compare information from two files.",
       "task": "Compare two provided files.",
-      "success_criteria": "Arxh should identify meaningful differences and cite where they came from."
+      "success_criteria": "Arx-h should identify meaningful differences and cite where they came from."
     },
     {
       "id": "TEST-15",
       "title": "File task with missing information",
       "category": "files",
-      "goal": "Test whether Arxh notices incomplete input.",
-      "task": "Provide a partially complete document and ask Arxh to finish it.",
-      "success_criteria": "Arxh must distinguish between missing information and information it can safely infer."
+      "goal": "Test whether Arx-h notices incomplete input.",
+      "task": "Provide a partially complete document and ask Arx-h to finish it.",
+      "success_criteria": "Arx-h must distinguish between missing information and information it can safely infer."
     },
     {
       "id": "TEST-16",
@@ -172,7 +172,7 @@
       "category": "coding",
       "goal": "Find and fix a bug.",
       "task": "Diagnose and fix a bug in an existing program.",
-      "success_criteria": "Arxh should identify the cause, make the necessary change, and explain how the fix was validated."
+      "success_criteria": "Arx-h should identify the cause, make the necessary change, and explain how the fix was validated."
     },
     {
       "id": "TEST-18",
@@ -194,9 +194,9 @@
       "id": "TEST-20",
       "title": "Recover from a failed implementation",
       "category": "coding",
-      "goal": "Test whether Arxh can respond to a failed coding attempt.",
+      "goal": "Test whether Arx-h can respond to a failed coding attempt.",
       "task": "Allow the first implementation to fail a test.",
-      "success_criteria": "Arxh should inspect the failure, revise its approach, and rerun the relevant checks."
+      "success_criteria": "Arx-h should inspect the failure, revise its approach, and rerun the relevant checks."
     },
     {
       "id": "TEST-21",
@@ -268,15 +268,15 @@
       "category": "computer",
       "goal": "Test behavior when a tool fails.",
       "task": "Introduce a realistic tool failure during execution.",
-      "success_criteria": "Arxh should detect the failure, recover when possible, and avoid claiming success without completing the task."
+      "success_criteria": "Arx-h should detect the failure, recover when possible, and avoid claiming success without completing the task."
     },
     {
       "id": "TEST-30",
       "title": "Goal-to-result task",
       "category": "computer",
-      "goal": "Test the central idea behind Arxh.",
-      "task": "Give Arxh a desired outcome without providing a detailed recipe for achieving it.",
-      "success_criteria": "Arxh should understand the objective, determine a reasonable plan, choose the necessary actions, execute the work, verify the result, and deliver the final outcome. Judged primarily on the quality of the final result, not on how impressive the intermediate process looks."
+      "goal": "Test the central idea behind Arx-h.",
+      "task": "Give Arx-h a desired outcome without providing a detailed recipe for achieving it.",
+      "success_criteria": "Arx-h should understand the objective, determine a reasonable plan, choose the necessary actions, execute the work, verify the result, and deliver the final outcome. Judged primarily on the quality of the final result, not on how impressive the intermediate process looks."
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "suite": "arxh-test-suite",
-  "description": "Recorded results for Arxh public evaluations. Only measured outcomes belong here. Fields left as null mean the task has not been run yet.",
+  "description": "Recorded results for Arx-h public evaluations. Only measured outcomes belong here. Fields left as null mean the task has not been run yet.",
   "fields": {
     "status": ["PASS", "PARTIAL", "FAIL"],
     "verified": ["yes", "no", "partial"],

@@ -68,7 +68,7 @@ Compare two provided files.
 
 **Success criteria**
 
-Arxh should identify meaningful differences and cite where they came from.
+Arx-h should identify meaningful differences and cite where they came from.
 
 ---
 
@@ -76,15 +76,15 @@ Arxh should identify meaningful differences and cite where they came from.
 
 **Goal**
 
-Test whether Arxh notices incomplete input.
+Test whether Arx-h notices incomplete input.
 
 **Task**
 
-Provide a partially complete document and ask Arxh to finish it.
+Provide a partially complete document and ask Arx-h to finish it.
 
 **Success criteria**
 
-Arxh must distinguish between missing information and information it can safely infer.
+Arx-h must distinguish between missing information and information it can safely infer.
 
 ---
 

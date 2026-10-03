@@ -8,7 +8,7 @@ Record, for every task:
 
 - the exact command used to verify
 - what the command reported
-- whether Arxh ran it or only described it
+- whether Arx-h ran it or only described it
 
 TEST-19 has an extra constraint worth stating explicitly: behavior must be equivalent. A refactor that also fixes a bug is not a refactor.
 
@@ -42,7 +42,7 @@ Diagnose and fix a bug in an existing program.
 
 **Success criteria**
 
-Arxh should identify the cause, make the necessary change, and explain how the fix was validated.
+Arx-h should identify the cause, make the necessary change, and explain how the fix was validated.
 
 ---
 
@@ -82,7 +82,7 @@ The implementation should remain behaviorally equivalent.
 
 **Goal**
 
-Test whether Arxh can respond to a failed coding attempt.
+Test whether Arx-h can respond to a failed coding attempt.
 
 **Task**
 
@@ -90,7 +90,7 @@ Allow the first implementation to fail a test.
 
 **Success criteria**
 
-Arxh should inspect the failure, revise its approach, and rerun the relevant checks.
+Arx-h should inspect the failure, revise its approach, and rerun the relevant checks.
 
 ---
 
