@@ -1,0 +1,52 @@
+{
+  "suite": "arxh-test-suite",
+  "description": "Recorded results for Arxh public evaluations. Only measured outcomes belong here. Fields left as null mean the task has not been run yet.",
+  "fields": {
+    "status": ["PASS", "PARTIAL", "FAIL"],
+    "verified": ["yes", "no", "partial"],
+    "intervention": ["none", "minor", "significant"],
+    "recovered": ["not needed", "recovered", "failed to recover"]
+  },
+  "weeks": [
+    {
+      "week": "week-01",
+      "label": "Week 01 — first structured public test",
+      "status": "in_progress",
+      "started_at": null,
+      "completed_at": null,
+      "summary": null,
+      "results": [
+        { "test": "TEST-01", "category": "research", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-02", "category": "research", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-03", "category": "research", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-04", "category": "research", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-05", "category": "research", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-06", "category": "research", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-07", "category": "research", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-08", "category": "research", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-09", "category": "research", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-10", "category": "research", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-11", "category": "files", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-12", "category": "files", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-13", "category": "files", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-14", "category": "files", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-15", "category": "files", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-16", "category": "coding", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-17", "category": "coding", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-18", "category": "coding", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-19", "category": "coding", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-20", "category": "coding", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-21", "category": "multimodal", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-22", "category": "multimodal", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-23", "category": "multimodal", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-24", "category": "multimodal", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-25", "category": "multimodal", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-26", "category": "computer", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-27", "category": "computer", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-28", "category": "computer", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-29", "category": "computer", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null },
+        { "test": "TEST-30", "category": "computer", "status": null, "verified": null, "intervention": null, "recovered": null, "duration_seconds": null, "tool_errors": null, "notes": null }
+      ]
+    }
+  ]
+}
