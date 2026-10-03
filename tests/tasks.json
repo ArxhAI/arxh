@@ -1,0 +1,282 @@
+{
+  "suite": "arxh-test-suite",
+  "version": "1.0.0",
+  "description": "Machine-readable task definitions for Arxh public evaluations. Results are recorded separately in results.json so tasks can be repeated and compared.",
+  "statuses": ["PASS", "PARTIAL", "FAIL"],
+  "interventions": ["none", "minor", "significant"],
+  "recoveries": ["not needed", "recovered", "failed to recover"],
+  "categories": [
+    {
+      "id": "research",
+      "name": "Research & Reasoning",
+      "source": "week-01/research.md",
+      "count": 10
+    },
+    {
+      "id": "files",
+      "name": "Files & Documents",
+      "source": "week-01/files.md",
+      "count": 5
+    },
+    {
+      "id": "coding",
+      "name": "Coding",
+      "source": "week-01/coding.md",
+      "count": 5
+    },
+    {
+      "id": "multimodal",
+      "name": "Multimodal",
+      "source": "week-01/multimodal.md",
+      "count": 5
+    },
+    {
+      "id": "computer",
+      "name": "Browser / Computer / Multi-step",
+      "source": "week-01/computer.md",
+      "count": 5
+    }
+  ],
+  "tasks": [
+    {
+      "id": "TEST-01",
+      "title": "Compare two approaches",
+      "category": "research",
+      "goal": "Compare two technical approaches to solving the same problem.",
+      "task": "Research two commonly used approaches for building a production AI agent with external tools. Explain how each approach works, where each is useful, major trade-offs, operational risks, and when one approach would be preferable to the other.",
+      "success_criteria": "The answer must be based on current sources, clearly separate facts from interpretation, and provide a useful comparison rather than a generic summary."
+    },
+    {
+      "id": "TEST-02",
+      "title": "Find a current fact",
+      "category": "research",
+      "goal": "Retrieve a time-sensitive piece of information.",
+      "task": "Find a current public fact from the web and provide the source used to verify it.",
+      "success_criteria": "The information must be current, the source must be identifiable, and the final answer must not rely on unsupported assumptions."
+    },
+    {
+      "id": "TEST-03",
+      "title": "Conflicting information",
+      "category": "research",
+      "goal": "Handle disagreement between sources.",
+      "task": "Find two credible sources that disagree on a factual detail. Explain what they disagree about, why the disagreement may exist, which information is better supported, and what remains uncertain.",
+      "success_criteria": "Arxh must not simply choose the first source it finds."
+    },
+    {
+      "id": "TEST-04",
+      "title": "Multi-source synthesis",
+      "category": "research",
+      "goal": "Combine information from several sources.",
+      "task": "Research a technical topic using at least three independent sources and produce a concise synthesis.",
+      "success_criteria": "The final result should combine the sources into one coherent answer rather than presenting three disconnected summaries."
+    },
+    {
+      "id": "TEST-05",
+      "title": "Follow a constraint",
+      "category": "research",
+      "goal": "See whether Arxh can respect a specific requirement while researching.",
+      "task": "Research a software library, but only include information that can be verified from official documentation.",
+      "success_criteria": "Unofficial claims should not be presented as official facts."
+    },
+    {
+      "id": "TEST-06",
+      "title": "Ambiguous request",
+      "category": "research",
+      "goal": "Test whether Arxh notices missing information.",
+      "task": "\"Find the best database for my application.\" No application details are provided.",
+      "success_criteria": "Arxh should identify the missing context and avoid pretending that one option is universally best."
+    },
+    {
+      "id": "TEST-07",
+      "title": "Planning a project",
+      "category": "research",
+      "goal": "Turn a broad objective into a practical plan.",
+      "task": "Create a realistic implementation plan for a small AI-powered web application, including major steps, dependencies, likely risks, testing requirements, and a sensible order of execution.",
+      "success_criteria": "The plan should be actionable and internally consistent."
+    },
+    {
+      "id": "TEST-08",
+      "title": "Detect a false premise",
+      "category": "research",
+      "goal": "See whether Arxh blindly accepts an incorrect assumption.",
+      "task": "Provide a question containing a false or questionable premise and ask Arxh to solve it.",
+      "success_criteria": "Arxh should identify the premise before continuing instead of building an elaborate answer on top of a mistake."
+    },
+    {
+      "id": "TEST-09",
+      "title": "Long instruction",
+      "category": "research",
+      "goal": "Measure instruction retention.",
+      "task": "Give Arxh a long request containing multiple independent requirements, formatting constraints, and exclusions.",
+      "success_criteria": "Important requirements should survive through the final response."
+    },
+    {
+      "id": "TEST-10",
+      "title": "Change of direction",
+      "category": "research",
+      "goal": "Test adaptation during an ongoing task.",
+      "task": "Start with one objective, then introduce a legitimate change in the requirements halfway through the task.",
+      "success_criteria": "Arxh should adapt instead of continuing blindly with the original plan."
+    },
+    {
+      "id": "TEST-11",
+      "title": "Read and summarize a document",
+      "category": "files",
+      "goal": "Extract the important information from a provided document.",
+      "task": "Summarize a provided document.",
+      "success_criteria": "The summary should preserve the document's important meaning without inventing content."
+    },
+    {
+      "id": "TEST-12",
+      "title": "Extract structured information",
+      "category": "files",
+      "goal": "Turn an unstructured document into structured data.",
+      "task": "Extract names, dates, amounts, and relevant categories into a clean table.",
+      "success_criteria": "Values must match the source document."
+    },
+    {
+      "id": "TEST-13",
+      "title": "Edit a document",
+      "category": "files",
+      "goal": "Modify a document according to explicit instructions.",
+      "task": "Edit a document following explicit instructions.",
+      "success_criteria": "Only the requested changes should be made unless additional changes are necessary for correctness."
+    },
+    {
+      "id": "TEST-14",
+      "title": "Cross-file comparison",
+      "category": "files",
+      "goal": "Compare information from two files.",
+      "task": "Compare two provided files.",
+      "success_criteria": "Arxh should identify meaningful differences and cite where they came from."
+    },
+    {
+      "id": "TEST-15",
+      "title": "File task with missing information",
+      "category": "files",
+      "goal": "Test whether Arxh notices incomplete input.",
+      "task": "Provide a partially complete document and ask Arxh to finish it.",
+      "success_criteria": "Arxh must distinguish between missing information and information it can safely infer."
+    },
+    {
+      "id": "TEST-16",
+      "title": "Small implementation",
+      "category": "coding",
+      "goal": "Implement a small coding task from a natural-language request.",
+      "task": "Implement a small coding task described in natural language.",
+      "success_criteria": "The result should satisfy the requested behavior and remain readable."
+    },
+    {
+      "id": "TEST-17",
+      "title": "Debug an existing program",
+      "category": "coding",
+      "goal": "Find and fix a bug.",
+      "task": "Diagnose and fix a bug in an existing program.",
+      "success_criteria": "Arxh should identify the cause, make the necessary change, and explain how the fix was validated."
+    },
+    {
+      "id": "TEST-18",
+      "title": "Write tests",
+      "category": "coding",
+      "goal": "Add tests to an existing implementation.",
+      "task": "Add tests covering the requested behavior.",
+      "success_criteria": "The tests should cover the requested behavior rather than merely increasing the line count."
+    },
+    {
+      "id": "TEST-19",
+      "title": "Refactor without changing behavior",
+      "category": "coding",
+      "goal": "Improve code structure while preserving functionality.",
+      "task": "Refactor an implementation while keeping behavior identical.",
+      "success_criteria": "The implementation should remain behaviorally equivalent."
+    },
+    {
+      "id": "TEST-20",
+      "title": "Recover from a failed implementation",
+      "category": "coding",
+      "goal": "Test whether Arxh can respond to a failed coding attempt.",
+      "task": "Allow the first implementation to fail a test.",
+      "success_criteria": "Arxh should inspect the failure, revise its approach, and rerun the relevant checks."
+    },
+    {
+      "id": "TEST-21",
+      "title": "Read an image",
+      "category": "multimodal",
+      "goal": "Extract useful information from an image.",
+      "task": "Analyze a provided image.",
+      "success_criteria": "The answer should distinguish clearly visible information from assumptions."
+    },
+    {
+      "id": "TEST-22",
+      "title": "Analyze a chart",
+      "category": "multimodal",
+      "goal": "Interpret a chart or graph.",
+      "task": "Interpret a provided chart or graph.",
+      "success_criteria": "The response must match the actual visual data and avoid unsupported conclusions."
+    },
+    {
+      "id": "TEST-23",
+      "title": "Document screenshot",
+      "category": "multimodal",
+      "goal": "Understand information contained in a screenshot of a document or interface.",
+      "task": "Extract information from a screenshot of a document or interface.",
+      "success_criteria": "Important visible details should be captured accurately."
+    },
+    {
+      "id": "TEST-24",
+      "title": "Compare two images",
+      "category": "multimodal",
+      "goal": "Identify relevant differences between two images.",
+      "task": "Compare two provided images.",
+      "success_criteria": "The response should focus on meaningful differences rather than superficial observations."
+    },
+    {
+      "id": "TEST-25",
+      "title": "Multimodal reasoning",
+      "category": "multimodal",
+      "goal": "Combine visual information with a written instruction.",
+      "task": "Answer an instruction that requires both an image and written context.",
+      "success_criteria": "The final response should correctly use both sources of information."
+    },
+    {
+      "id": "TEST-26",
+      "title": "Complete a web research task",
+      "category": "computer",
+      "goal": "Use the browser to research a specific question and return a verified result.",
+      "task": "Research a question in a browser and return a verified result.",
+      "success_criteria": "The final answer must be supported by the information actually found during the task."
+    },
+    {
+      "id": "TEST-27",
+      "title": "Multi-step web workflow",
+      "category": "computer",
+      "goal": "Complete a sequence of dependent browser actions.",
+      "task": "Complete a multi-step browser workflow where each step depends on the previous one.",
+      "success_criteria": "Each step should contribute toward the final objective."
+    },
+    {
+      "id": "TEST-28",
+      "title": "Tool selection",
+      "category": "computer",
+      "goal": "Determine whether the agent chooses an appropriate tool for the task.",
+      "task": "Present a task where several tools are available and observe which one is chosen.",
+      "success_criteria": "The selected tool should be appropriate to the problem rather than used simply because it is available."
+    },
+    {
+      "id": "TEST-29",
+      "title": "Recovery from tool failure",
+      "category": "computer",
+      "goal": "Test behavior when a tool fails.",
+      "task": "Introduce a realistic tool failure during execution.",
+      "success_criteria": "Arxh should detect the failure, recover when possible, and avoid claiming success without completing the task."
+    },
+    {
+      "id": "TEST-30",
+      "title": "Goal-to-result task",
+      "category": "computer",
+      "goal": "Test the central idea behind Arxh.",
+      "task": "Give Arxh a desired outcome without providing a detailed recipe for achieving it.",
+      "success_criteria": "Arxh should understand the objective, determine a reasonable plan, choose the necessary actions, execute the work, verify the result, and deliver the final outcome. Judged primarily on the quality of the final result, not on how impressive the intermediate process looks."
+    }
+  ]
+}
