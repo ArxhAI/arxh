@@ -2,15 +2,15 @@
   <img src="assets/arxh-header.png" alt="Say Hello To Arxh" width="100%" />
 </div>
 
-# arx-h
+# Arxh
 
-Experimental AI agent research by Arx-h Al, exploring how AI can understand real-world problems, work toward user goals, and deliver useful results through reasoning, computer use, persistent tasks, multimodal interaction, and connected tools. Currently in early development and testing.
+Experimental AI agent research by Arxh Al, exploring how AI can understand real-world problems, work toward user goals, and deliver useful results through reasoning, computer use, persistent tasks, multimodal interaction, and connected tools. Currently in early development and testing.
 
 ## Why this repo exists
 
 Most agent demos are written by the people building the agent. This repository exists to be harsher than that.
 
-Arx-h is given real tasks — ambiguous, multi-step, and occasionally broken — and then judged on what it produced, not on how impressive the process looked along the way. Failures are kept in the record next to successes, because a failure that gets studied is worth more than a success that gets celebrated.
+Arxh is given real tasks ambiguous, multi-step, and occasionally broken and then judged on what it produced, not on how impressive the process looked along the way. Failures are kept in the record next to successes, because a failure that gets studied is worth more than a success that gets celebrated.
 
 The current focus is **testing**. There is no product surface here yet. There is a test suite and an honest place to put the results.
 
@@ -52,9 +52,9 @@ The tests are intentionally different. Some are straightforward. Some contain am
 
 ### Result states
 
-- **PASS** — the task was completed correctly and the important output was verified.
-- **PARTIAL** — meaningful progress, but the final result was incomplete, incorrect, or insufficiently verified.
-- **FAIL** — the task could not be completed, or the final result was not usable.
+- **PASS** the task was completed correctly and the important output was verified.
+- **PARTIAL** meaningful progress, but the final result was incomplete, incorrect, or insufficiently verified.
+- **FAIL** the task could not be completed, or the final result was not usable.
 
 A task is not considered a success simply because Arx-h produced an answer. The final result must be checked against the task requirements.
 
