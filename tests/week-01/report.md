@@ -1,6 +1,6 @@
 # Week 01 Report
 
-This report summarizes the first public testing period for Arxh.
+This report summarizes the first public testing period for Arx-h.
 
 Raw per-task results live in [`../results.json`](../results.json). Category-level notes live in `research.md`, `files.md`, `coding.md`, `multimodal.md`, and `computer.md`.
 

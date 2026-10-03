@@ -1,4 +1,4 @@
-# Arxh Test Suite
+# Arx-h Test Suite
 
 30 tasks, grouped into five categories.
 
@@ -76,7 +76,7 @@ Explain:
 
 **Success criteria**
 
-Arxh must not simply choose the first source it finds.
+Arx-h must not simply choose the first source it finds.
 
 ---
 
@@ -100,7 +100,7 @@ The final result should combine the sources into one coherent answer rather than
 
 **Goal**
 
-See whether Arxh can respect a specific requirement while researching.
+See whether Arx-h can respect a specific requirement while researching.
 
 **Task**
 
@@ -116,7 +116,7 @@ Unofficial claims should not be presented as official facts.
 
 **Goal**
 
-Test whether Arxh notices missing information.
+Test whether Arx-h notices missing information.
 
 **Task**
 
@@ -126,7 +126,7 @@ No application details are provided.
 
 **Success criteria**
 
-Arxh should identify the missing context and avoid pretending that one option is universally best.
+Arx-h should identify the missing context and avoid pretending that one option is universally best.
 
 ---
 
@@ -158,15 +158,15 @@ The plan should be actionable and internally consistent.
 
 **Goal**
 
-See whether Arxh blindly accepts an incorrect assumption.
+See whether Arx-h blindly accepts an incorrect assumption.
 
 **Task**
 
-Provide a question containing a false or questionable premise and ask Arxh to solve it.
+Provide a question containing a false or questionable premise and ask Arx-h to solve it.
 
 **Success criteria**
 
-Arxh should identify the premise before continuing instead of building an elaborate answer on top of a mistake.
+Arx-h should identify the premise before continuing instead of building an elaborate answer on top of a mistake.
 
 ---
 
@@ -178,7 +178,7 @@ Measure instruction retention.
 
 **Task**
 
-Give Arxh a long request containing multiple independent requirements, formatting constraints, and exclusions.
+Give Arx-h a long request containing multiple independent requirements, formatting constraints, and exclusions.
 
 **Success criteria**
 
@@ -198,7 +198,7 @@ Start with one objective, then introduce a legitimate change in the requirements
 
 **Success criteria**
 
-Arxh should adapt instead of continuing blindly with the original plan.
+Arx-h should adapt instead of continuing blindly with the original plan.
 
 ---
 
@@ -252,7 +252,7 @@ Compare information from two files.
 
 **Success criteria**
 
-Arxh should identify meaningful differences and cite where they came from.
+Arx-h should identify meaningful differences and cite where they came from.
 
 ---
 
@@ -260,15 +260,15 @@ Arxh should identify meaningful differences and cite where they came from.
 
 **Goal**
 
-Test whether Arxh notices incomplete input.
+Test whether Arx-h notices incomplete input.
 
 **Task**
 
-Provide a partially complete document and ask Arxh to finish it.
+Provide a partially complete document and ask Arx-h to finish it.
 
 **Success criteria**
 
-Arxh must distinguish between missing information and information it can safely infer.
+Arx-h must distinguish between missing information and information it can safely infer.
 
 ---
 
@@ -294,7 +294,7 @@ Find and fix a bug.
 
 **Success criteria**
 
-Arxh should identify the cause, make the necessary change, and explain how the fix was validated.
+Arx-h should identify the cause, make the necessary change, and explain how the fix was validated.
 
 ---
 
@@ -326,7 +326,7 @@ The implementation should remain behaviorally equivalent.
 
 **Goal**
 
-Test whether Arxh can respond to a failed coding attempt.
+Test whether Arx-h can respond to a failed coding attempt.
 
 **Task**
 
@@ -334,7 +334,7 @@ Allow the first implementation to fail a test.
 
 **Success criteria**
 
-Arxh should inspect the failure, revise its approach, and rerun the relevant checks.
+Arx-h should inspect the failure, revise its approach, and rerun the relevant checks.
 
 ---
 
@@ -450,7 +450,7 @@ Introduce a realistic tool failure during execution.
 
 **Success criteria**
 
-Arxh should detect the failure, recover when possible, and avoid claiming success without completing the task.
+Arx-h should detect the failure, recover when possible, and avoid claiming success without completing the task.
 
 ---
 
@@ -458,15 +458,15 @@ Arxh should detect the failure, recover when possible, and avoid claiming succes
 
 **Goal**
 
-Test the central idea behind Arxh.
+Test the central idea behind Arx-h.
 
 **Task**
 
-Give Arxh a desired outcome without providing a detailed recipe for achieving it.
+Give Arx-h a desired outcome without providing a detailed recipe for achieving it.
 
 **Success criteria**
 
-Arxh should:
+Arx-h should:
 
 1. understand the objective
 2. determine a reasonable plan
@@ -483,4 +483,4 @@ The task should be judged primarily on the quality of the final result, not on h
 
 Each task should be recorded in `results.json` and summarised in the weekly category notes under `week-01/`.
 
-A task is not considered a success simply because Arxh produced an answer. The final result must be checked against the task requirements.
+A task is not considered a success simply because Arx-h produced an answer. The final result must be checked against the task requirements.

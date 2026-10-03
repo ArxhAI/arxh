@@ -2,11 +2,11 @@
 
 Tasks TEST-26 to TEST-30.
 
-These five tasks cover the part of Arxh that works end to end: understanding an objective that was not given as a recipe, planning it, choosing actions, and delivering a result that a person can actually use.
+These five tasks cover the part of Arx-h that works end to end: understanding an objective that was not given as a recipe, planning it, choosing actions, and delivering a result that a person can actually use.
 
 Longer tasks fail late. A wrong turn in the first two minutes is usually recoverable; the same wrong turn at step nine is often not. Record where things went wrong, not just that they did.
 
-TEST-28 and TEST-29 are deliberately adversarial. TEST-28 rewards *not* using a tool. TEST-29 depends on Arxh reporting the failure rather than narrating around it.
+TEST-28 and TEST-29 are deliberately adversarial. TEST-28 rewards *not* using a tool. TEST-29 depends on Arx-h reporting the failure rather than narrating around it.
 
 ## Tasks
 
@@ -70,7 +70,7 @@ Introduce a realistic tool failure during execution.
 
 **Success criteria**
 
-Arxh should detect the failure, recover when possible, and avoid claiming success without completing the task.
+Arx-h should detect the failure, recover when possible, and avoid claiming success without completing the task.
 
 ---
 
@@ -78,15 +78,15 @@ Arxh should detect the failure, recover when possible, and avoid claiming succes
 
 **Goal**
 
-Test the central idea behind Arxh.
+Test the central idea behind Arx-h.
 
 **Task**
 
-Give Arxh a desired outcome without providing a detailed recipe for achieving it.
+Give Arx-h a desired outcome without providing a detailed recipe for achieving it.
 
 **Success criteria**
 
-Arxh should:
+Arx-h should:
 
 1. understand the objective
 2. determine a reasonable plan

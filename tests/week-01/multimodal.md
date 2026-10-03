@@ -6,7 +6,7 @@ Image understanding is where confident errors are easiest to hide, because the r
 
 Two things to watch for on every run:
 
-- **Observation vs. inference.** Did Arxh describe what is visible, or what such a screen usually contains?
+- **Observation vs. inference.** Did Arx-h describe what is visible, or what such a screen usually contains?
 - **Precision on numbers.** Charts, screenshots, and tables contain values that can be checked exactly. Approximate values should be marked as approximate.
 
 TEST-25 depends on both the image and the written instruction. Solving the image and ignoring the instruction, or the reverse, is a partial result at best.

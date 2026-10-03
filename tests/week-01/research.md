@@ -2,7 +2,7 @@
 
 Tasks TEST-01 to TEST-10.
 
-This is the largest block in Week 01, because research is where an agent most easily produces a confident answer that was never checked. Most of these tests are not about whether Arxh can retrieve text. They are about whether it retrieves it, compares it, notices its own missing context, and stays honest about uncertainty.
+This is the largest block in Week 01, because research is where an agent most easily produces a confident answer that was never checked. Most of these tests are not about whether Arx-h can retrieve text. They are about whether it retrieves it, compares it, notices its own missing context, and stays honest about uncertainty.
 
 ## Tasks
 
@@ -65,7 +65,7 @@ Explain:
 
 **Success criteria**
 
-Arxh must not simply choose the first source it finds.
+Arx-h must not simply choose the first source it finds.
 
 ---
 
@@ -89,7 +89,7 @@ The final result should combine the sources into one coherent answer rather than
 
 **Goal**
 
-See whether Arxh can respect a specific requirement while researching.
+See whether Arx-h can respect a specific requirement while researching.
 
 **Task**
 
@@ -105,7 +105,7 @@ Unofficial claims should not be presented as official facts.
 
 **Goal**
 
-Test whether Arxh notices missing information.
+Test whether Arx-h notices missing information.
 
 **Task**
 
@@ -115,7 +115,7 @@ No application details are provided.
 
 **Success criteria**
 
-Arxh should identify the missing context and avoid pretending that one option is universally best.
+Arx-h should identify the missing context and avoid pretending that one option is universally best.
 
 ---
 
@@ -147,15 +147,15 @@ The plan should be actionable and internally consistent.
 
 **Goal**
 
-See whether Arxh blindly accepts an incorrect assumption.
+See whether Arx-h blindly accepts an incorrect assumption.
 
 **Task**
 
-Provide a question containing a false or questionable premise and ask Arxh to solve it.
+Provide a question containing a false or questionable premise and ask Arx-h to solve it.
 
 **Success criteria**
 
-Arxh should identify the premise before continuing instead of building an elaborate answer on top of a mistake.
+Arx-h should identify the premise before continuing instead of building an elaborate answer on top of a mistake.
 
 ---
 
@@ -167,7 +167,7 @@ Measure instruction retention.
 
 **Task**
 
-Give Arxh a long request containing multiple independent requirements, formatting constraints, and exclusions.
+Give Arx-h a long request containing multiple independent requirements, formatting constraints, and exclusions.
 
 **Success criteria**
 
@@ -187,7 +187,7 @@ Start with one objective, then introduce a legitimate change in the requirements
 
 **Success criteria**
 
-Arxh should adapt instead of continuing blindly with the original plan.
+Arx-h should adapt instead of continuing blindly with the original plan.
 
 ---
 
@@ -212,4 +212,4 @@ Fill this in only after each task has actually been run.
 **Intervention:** none / minor / significant
 **Recovered:** not needed / recovered / failed to recover
 
-Notes should be concrete observations, not impressions. "Arxh used a 2023 blog post to answer a question about current pricing" is useful. "The answer felt generic" is not.
+Notes should be concrete observations, not impressions. "Arx-h used a 2023 blog post to answer a question about current pricing" is useful. "The answer felt generic" is not.
