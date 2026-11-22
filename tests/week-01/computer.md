@@ -2,11 +2,11 @@
 
 Tasks TEST-26 to TEST-30.
 
-These five tasks cover the part of Arx-h that works end to end: understanding an objective that was not given as a recipe, planning it, choosing actions, and delivering a result that a person can actually use.
+These five scenarios are intended to probe end-to-end browser and computer use: interpreting a goal, planning dependent actions, selecting tools, handling tool failure, and verifying a usable outcome. Define the exact inputs and environment before comparing runs.
 
-Longer tasks fail late. A wrong turn in the first two minutes is usually recoverable; the same wrong turn at step nine is often not. Record where things went wrong, not just that they did.
+Long workflows can fail late. Record where and how a failure occurred, not only that it happened.
 
-TEST-28 and TEST-29 are deliberately adversarial. TEST-28 rewards *not* using a tool. TEST-29 depends on Arx-h reporting the failure rather than narrating around it.
+TEST-28 should make the appropriate tool choice clear, including when no tool is warranted. TEST-29 tests failure handling; preserve the error, recovery path, and final state rather than relying on a narrative claim.
 
 ## Tasks
 
@@ -70,7 +70,7 @@ Introduce a realistic tool failure during execution.
 
 **Success criteria**
 
-Arx-h should detect the failure, recover when possible, and avoid claiming success without completing the task.
+Arxh should detect the failure, recover when possible, and avoid claiming success without completing the task.
 
 ---
 
@@ -78,15 +78,15 @@ Arx-h should detect the failure, recover when possible, and avoid claiming succe
 
 **Goal**
 
-Test the central idea behind Arx-h.
+Test the central idea behind Arxh.
 
 **Task**
 
-Give Arx-h a desired outcome without providing a detailed recipe for achieving it.
+Give Arxh a desired outcome without providing a detailed recipe for achieving it.
 
 **Success criteria**
 
-Arx-h should:
+Arxh should:
 
 1. understand the objective
 2. determine a reasonable plan
