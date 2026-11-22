@@ -18,6 +18,7 @@ We are still learning and shaping the direction. This repository does not yet co
 - [What is currently in this repository](#what-is-currently-in-this-repository)
 - [Contributing](#contributing)
 - [Contributor guide](CONTRIBUTING.md)
+- [Image credits](assets/README.md)
 - [References](#references)
 - [License](#license)
 
@@ -36,6 +37,11 @@ Instead, we plan to explore questions such as:
 - When performance matters, how should it be measured fairly against a clearly stated baseline?
 
 The initial scope is intentionally modest: learn the foundations, choose a small problem, establish a baseline, and record what happens. The aim is not to promise a new framework or compete with mature ML platforms before we have a reproducible experiment.
+
+<div align="center">
+  <img src="assets/research-at-work.jpg" alt="Software engineer working at dual monitors in an office; an illustrative stock photo, not an Arxh team or experiment image" width="100%" />
+  <p><sub>Illustrative software-development photo by <a href="https://www.pexels.com/@thisisengineering/">ThisIsEngineering</a> on <a href="https://www.pexels.com/photo/woman-coding-on-computer-3861958/">Pexels</a>. It does not show Arxh, Rust-specific code, or an Arxh experiment. <a href="assets/README.md">Asset credits and license notes</a>.</sub></p>
+</div>
 
 ## Rust ML ecosystem: starting points
 

@@ -11,6 +11,7 @@ You do not need to be an expert in both Rust and machine learning. A small, care
 - **Reproducibility:** improve dataset provenance, dependency pinning, setup instructions, correctness checks, or result reporting.
 - **Documentation:** clarify a concept, fix a technical error, or record an obstacle encountered while learning.
 - **Evaluation tasks:** improve the existing exploratory agent task set, or propose a separate Rust/ML-specific task. Keep the two scopes distinct.
+- **Visual assets:** contribute original images or images with a license that permits this use; record the creator, source, and license in `assets/README.md`. Do not describe a licensed stock image as public domain, imply endorsement, or remove its provenance.
 
 ## Before opening a pull request
 
