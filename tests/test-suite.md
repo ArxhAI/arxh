@@ -1,6 +1,6 @@
 # Arxh Evaluation Task Suite
 
-30 exploratory task scenarios, grouped into five categories.
+30 exploratory scenarios from Arxh's initial general agent-evaluation direction, grouped into five categories. They are not Rust machine-learning experiments.
 
 This is a task inventory, not an executable test harness. Several scenarios need fixed prompts, fixtures, environments, and grading procedures before runs can be reproduced and compared fairly. Keep task definitions stable during a run; version material changes.
 

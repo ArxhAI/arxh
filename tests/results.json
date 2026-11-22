@@ -1,6 +1,6 @@
 {
   "suite": "arxh-test-suite",
-  "description": "Outcome ledger for Arxh agent evaluations. Record measured outcomes only; null means the task has not been run or the field has not been recorded.",
+  "description": "Outcome ledger for Arxh's exploratory general agent evaluations. These results are not Rust ML benchmark results; record measured outcomes only, and use null for tasks or fields not yet recorded.",
   "fields": {
     "status": ["PASS", "PARTIAL", "FAIL"],
     "week_status": ["not_started", "in_progress", "complete"],

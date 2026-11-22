@@ -1,7 +1,7 @@
 {
   "suite": "arxh-test-suite",
   "version": "1.0.0",
-  "description": "Exploratory machine-readable task scenarios for Arxh agent evaluation. Results are recorded separately in results.json; several scenarios still need fixed inputs and grading procedures before repeatable execution.",
+  "description": "Exploratory machine-readable scenarios from Arxh's earlier general agent-evaluation direction, not Rust ML experiments. Results are recorded separately in results.json; several scenarios still need fixed inputs and grading procedures before repeatable execution.",
   "statuses": ["PASS", "PARTIAL", "FAIL"],
   "interventions": ["none", "minor", "significant"],
   "recoveries": ["not needed", "recovered", "failed to recover"],

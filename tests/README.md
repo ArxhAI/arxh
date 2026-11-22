@@ -1,6 +1,6 @@
 # Arxh Evaluation Suite
 
-This directory contains the first public task inventory for Arxh's AI-agent research. It is an **exploratory, manually oriented suite**, not an automated test runner or a validated benchmark. The repository currently contains no runnable agent or evaluation harness.
+This directory preserves the first public task inventory from Arxh's earlier, general AI-agent evaluation direction. It is an **exploratory, manually oriented suite**, not an automated test runner or a validated benchmark. It is not a set of Rust machine-learning experiments; future Rust/ML work should be documented separately. The repository currently contains no runnable agent or evaluation harness.
 
 ## Status at a glance
 
