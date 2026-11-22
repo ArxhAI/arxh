@@ -2,7 +2,7 @@
 
 30 exploratory scenarios from Arxh's initial general agent-evaluation direction, grouped into five categories. They are not Rust machine-learning experiments.
 
-This is a task inventory, not an executable test harness. Several scenarios need fixed prompts, fixtures, environments, and grading procedures before runs can be reproduced and compared fairly. Keep task definitions stable during a run; version material changes.
+This is a task inventory, not an executable test harness. Several scenarios need fixed prompts, fixtures, environments, and grading procedures before runs can be reproduced and compared fairly. Keep task definitions stable during a run; version material changes. These general-agent tasks are separate from the proposed deep-learning-in-Rust work in [`../RESEARCH-PLAN.md`](../RESEARCH-PLAN.md) and must not be reported as Rust ML results.
 
 | Category | Tasks | Count |
 |---|---|---:|

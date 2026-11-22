@@ -1,8 +1,8 @@
 # Week 01 — Research & Reasoning
 
-Tasks TEST-01 to TEST-10.
+Tasks TEST-01 to TEST-10 in the separate general-agent evaluation suite.
 
-This is the largest block in Week 01, because research is where an agent most easily produces a confident answer that was never checked. Most of these tests are not about whether Arxh can retrieve text. They are about whether it retrieves it, compares it, notices its own missing context, and stays honest about uncertainty.
+This is the largest block in Week 01 because research is where an agent can produce a confident answer that was never checked. The tests are not about Rust or deep learning. They examine whether an agent can locate sources, evaluate their relevance and freshness, combine information, notice missing context, and keep uncertainty visible. They do not measure Arxh’s ability to train a neural network or compare ML frameworks.
 
 ## Tasks
 
@@ -109,7 +109,7 @@ Test whether Arxh notices missing information.
 
 **Task**
 
-"Find the best database for my application."
+“Find the best database for my application.”
 
 No application details are provided.
 
@@ -129,13 +129,7 @@ Turn a broad objective into a practical plan.
 
 Create a realistic implementation plan for a small AI-powered web application.
 
-Include:
-
-- major steps
-- dependencies
-- likely risks
-- testing requirements
-- a sensible order of execution
+Include major steps, dependencies, likely risks, testing requirements, and a sensible order of execution.
 
 **Success criteria**
 
@@ -191,6 +185,16 @@ Arxh should adapt instead of continuing blindly with the original plan.
 
 ---
 
+## Evaluation protocol for this category
+
+Before a run, preserve the exact question, date, task-set revision, available research tools, and source requirements. “Current” has meaning only when the evaluator records the question date and checks a source that is authoritative for the fact in question. A useful source hierarchy often begins with the primary paper, official documentation, a maintained repository, or the organization responsible for the information. Secondary explanations can add context, but they should not be presented as an official statement or as independent confirmation when they merely repeat the same source.
+
+For each material claim, an evaluator should be able to find the supporting passage or data point. Citations should identify the source, not just a homepage; time-sensitive claims should include a date or version. If two sources disagree, assess whether they refer to different versions, definitions, populations, or dates before grading the conclusion. A polished summary that cannot be traced to its evidence is not a pass.
+
+A practical rubric can score source relevance, factual support, freshness, synthesis, treatment of counterevidence, constraint-following, and uncertainty separately. Use the rubric before running tasks, not after seeing the answer. For subjective dimensions, preserve examples and have a second reviewer apply the same criteria when feasible. If an automated judge is used, record its model, prompt, and known limitations, and do not let a judge’s unverified opinion replace source checks.
+
+The task inventory is still exploratory. Several prompts are not fully specified for independent replication, and no runs or results have been recorded. Before comparing agents, freeze the prompts and required inputs, version any material change, record the model/tool setup, and report all attempts rather than selecting only the cleanest one. Use `null` in the shared result ledger until a task is actually executed and graded.
+
 ## Results
 
 Fill this in only after each task has actually been run.
@@ -208,8 +212,14 @@ Fill this in only after each task has actually been run.
 | TEST-09 | — | — | — | — | — | — |
 | TEST-10 | — | — | — | — | — | — |
 
-**Status:** PASS / PARTIAL / FAIL
-**Intervention:** none / minor / significant
-**Recovered:** not needed / recovered / failed to recover
+- **Status:** `PASS` / `PARTIAL` / `FAIL`
+- **Intervention:** `none` / `minor` / `significant`
+- **Recovered:** `not needed` / `recovered` / `failed to recover`
 
-Notes should be concrete observations, not impressions. "Arxh used a 2023 blog post to answer a question about current pricing" is useful. "The answer felt generic" is not.
+Notes should be concrete observations, not impressions. “Arxh used a 2023 blog post to answer a question about current pricing” is useful. “The answer felt generic” is not. A `—` here means no result has been entered, not a failed run.
+
+## Scope and references
+
+This category belongs to the earlier exploratory general-agent evaluation suite. It must remain separate from the proposed Rust ML study in [`../../RESEARCH-PLAN.md`](../../RESEARCH-PLAN.md). Editing these scenarios or later running them would not constitute a deep-learning experiment, a trained model, or a Rust-framework benchmark.
+
+Evaluation design references: OpenAI’s [evaluation best practices](https://developers.openai.com/api/docs/guides/evaluation-best-practices), [agent workflow evaluation guide](https://developers.openai.com/api/docs/guides/agent-evals), and Inspect AI [documentation](https://inspect.aisi.org.uk/). These inform protocol design; they do not imply that this suite has been validated against them.
