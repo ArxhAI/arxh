@@ -1,129 +1,129 @@
 <div align="center">
-  <img src="assets/arxh-header.png" alt="Arxh — machine learning research and learning in Rust" width="100%" />
-  <p><strong>Machine learning, explored with Rust. Learning in public.</strong></p>
+  <img src="assets/arxh-header.png" alt="Arxh project wordmark on a white background" width="100%" />
+  <p><strong>Deep learning, explored with Rust. Learning in public.</strong></p>
 </div>
 
 # Arxh
 
-Arxh is an early-stage research and learning project exploring machine learning with Rust. The goal is to understand the tools and ideas carefully, build small experiments that others can reproduce, and share both the results and the questions that remain.
+Arxh is an early-stage research and learning project exploring machine learning—especially neural-network methods—with Rust. The goal is to understand the methods, study the available Rust tooling, and design small investigations whose claims could eventually be checked and repeated. This repository is a research plan and a place to record questions, sources, and limitations; it is not a finished ML product.
 
-We are still learning and shaping the direction. This repository does not yet contain a Rust implementation, a trained model, or an ML benchmark. It is a public place to clarify the research questions, compare possible starting points, and document the first steps without presenting plans as completed work.
+> **Status, stated plainly:** this checkout has no `Cargo.toml`, Rust ML implementation, model, experiment runner, trained weights, or measured Rust ML result. The founder reports that there is currently no budget to build or train a model. This is a user-reported project constraint; no compute access, spending, training run, or benchmark is assumed here. The two-month agenda below is a **proposed eight-week plan**, not a record of completed research.
 
-## On this page
+## Contents
 
-- [Research focus](#research-focus)
-- [Rust ML ecosystem: starting points](#rust-ml-ecosystem-starting-points)
-- [Learning roadmap](#learning-roadmap)
-- [How we want to run experiments](#how-we-want-to-run-experiments)
-- [What is currently in this repository](#what-is-currently-in-this-repository)
-- [Contributing](#contributing)
-- [Contributor guide](CONTRIBUTING.md)
-- [Image credits](assets/README.md)
+- [Research question and scope](#research-question-and-scope)
+- [What the literature suggests we should study](#what-the-literature-suggests-we-should-study)
+- [Rust ML ecosystem: candidates, not selections](#rust-ml-ecosystem-candidates-not-selections)
+- [Proposed eight-week research plan](RESEARCH-PLAN.md)
+- [Research protocol and evidence standards](#research-protocol-and-evidence-standards)
+- [Technical visuals and image credits](#technical-visuals-and-image-credits)
+- [What is in this repository](#what-is-in-this-repository)
+- [Contributing](CONTRIBUTING.md)
 - [References](#references)
 - [License](#license)
 
-## Research focus
+## Research question and scope
 
-The starting question is practical: **what does it take to learn, implement, and evaluate a small machine-learning task in Rust in a way that is understandable and repeatable?**
+The initial question is practical and deliberately limited: **what would it take to describe, implement, and evaluate one small neural-network task in Rust with enough detail that another person could check the result?** This is not a claim that Rust is faster, safer for every ML workload, or a replacement for established ML ecosystems. Those claims require measurements and a clearly defined comparison, neither of which exists in this repository today.
 
-That question is deliberately narrower than “Is Rust better for machine learning?” That broader claim would depend on the model, library, hardware, workload, and comparison method. We do not have results to support it, and we do not want to make it before doing the work.
+The proposed investigation is organized around three questions:
 
-Instead, we plan to explore questions such as:
+1. **Methods:** What are the essential computations and assumptions behind a small multilayer perceptron (MLP), a convolutional neural network (CNN), and an attention-based model? Which one is the smallest sensible teaching experiment?
+2. **Rust workflow:** What do current Rust ML frameworks expose for tensors, automatic differentiation, model definition, optimization, data handling, inference, and CPU execution? What dependencies and setup work do their own documentation require?
+3. **Evidence under a resource constraint:** What minimum protocol would let us report correctness, repeatability, runtime, and limitations without pretending that one small run establishes a general language or framework ranking?
 
-- How clearly can a small ML workflow be expressed in Rust—from preparing data to checking a model's output?
-- Which Rust libraries make sense for classical ML, tensor operations, training, or inference, and what trade-offs do their designs introduce?
-- Can a small experiment produce correct, repeatable results across runs?
-- What affects the developer experience: documentation, compile times, dependency setup, hardware support, and the effort required to inspect a result?
-- When performance matters, how should it be measured fairly against a clearly stated baseline?
+This scope prioritizes careful reading, a framework comparison based on primary documentation, and a reproducible experiment specification. The plan does not promise to train a model. If appropriate no-cost compute is not already available, the eight-week outcome should be a documented study design and a clear feasibility decision—not fabricated results or unapproved spending.
 
-The initial scope is intentionally modest: learn the foundations, choose a small problem, establish a baseline, and record what happens. The aim is not to promise a new framework or compete with mature ML platforms before we have a reproducible experiment.
+## What the literature suggests we should study
+
+The initial reading list is a scoping pass, not a systematic review. It starts with foundational work and official project documentation, then asks what each source contributes to a modest Rust-based study.
+
+- **Backpropagation and the MLP.** Rumelhart, Hinton, and Williams describe repeatedly adjusting network weights to reduce a discrepancy between actual and desired outputs [1](https://www.nature.com/articles/323533a0). For a first implementation, the useful learning target is the complete chain—input representation, affine layers, nonlinearities, loss, gradient calculation, and an update—not merely a diagram of connected nodes. The paper is historically important; it is not a claim that Arxh has implemented or validated backpropagation.
+- **Initialization and optimization.** Glorot and Bengio study why deep feed-forward networks can be difficult to train, including how activations and gradients behave across layers [2](https://proceedings.mlr.press/v9/glorot10a.html). This motivates tracking initialization and training settings explicitly rather than treating a model architecture as the whole method. Their findings do not establish that one initializer or activation is best for every task.
+- **Convolutional networks.** LeCun and colleagues describe gradient-based learning for document recognition and convolutional networks [3](https://doi.org/10.1109/5.726791). A CNN is a useful methods topic because spatial structure and local, shared filters change the computation relative to a fully connected MLP. A future experiment would need a task whose input structure makes that inductive bias relevant.
+- **Residual learning.** He and colleagues present a residual learning framework for training substantially deeper visual-recognition networks [4](https://openaccess.thecvf.com/content_cvpr_2016/html/He_Deep_Residual_Learning_CVPR_2016_paper.html). This is useful background for understanding skip connections, but a deep residual model is not an appropriate first resource-constrained implementation by default.
+- **Attention and Transformers.** Vaswani and colleagues propose an encoder–decoder architecture based on attention rather than recurrence or convolution for their sequence-transduction experiments [5](https://arxiv.org/abs/1706.03762). The paper’s experimental setup also reminds us that a method’s conceptual simplicity does not imply that its training is cheap. Attention is in the reading scope, not a promise to train a Transformer.
+
+The online textbook *Deep Learning* by Goodfellow, Bengio, and Courville provides a broader foundation across linear algebra, numerical computation, feed-forward networks, optimization, convolution, and methodology [6](https://www.deeplearningbook.org/). These readings define questions to investigate; they do not constitute a literature review of every current architecture or a result produced by Arxh.
 
 <div align="center">
-  <img src="assets/research-at-work.jpg" alt="Software engineer working at dual monitors in an office; an illustrative stock photo, not an Arxh team or experiment image" width="100%" />
-  <p><sub>Illustrative software-development photo by <a href="https://www.pexels.com/@thisisengineering/">ThisIsEngineering</a> on <a href="https://www.pexels.com/photo/woman-coding-on-computer-3861958/">Pexels</a>. It does not show Arxh, Rust-specific code, or an Arxh experiment. <a href="assets/README.md">Asset credits and license notes</a>.</sub></p>
+  <img src="assets/deep-learning-methods.svg" alt="Original hand-authored concept diagram contrasting dense MLP layers, local CNN kernels, and token self-attention; schematic only, not an Arxh implementation" width="100%" />
+  <p><sub>Original vector schematic for orientation. Method details and citations are listed above and in the research plan; this is not model output.</sub></p>
 </div>
 
-## Rust ML ecosystem: starting points
+## Rust ML ecosystem: candidates, not selections
 
-A first step in the research is to understand what already exists. These projects are **candidates to study, not tools Arxh has already tested or recommendations for every use case**. The short descriptions below reflect their own project documentation.
+The project pages below are starting points for a documented comparison. Their descriptions are the projects’ own; Arxh has not installed, tested, benchmarked, or selected them.
 
-| Project | Their stated focus | A useful question for an early experiment |
+| Candidate | What its own documentation describes | Question for the proposed review |
 |---|---|---|
-| [Linfa](https://github.com/rust-ml/linfa) | A Rust toolkit for machine-learning applications, with an emphasis on preprocessing and classical ML algorithms. | How approachable is a small classical-learning baseline, such as regression or classification? |
-| [Candle](https://github.com/huggingface/candle) | A minimalist ML framework for Rust, with a focus on performance and ease of use; its documentation includes CPU and GPU examples. | What is a clear first tensor or inference experiment, and what does its setup require? |
-| [Burn](https://github.com/tracel-ai/burn) | A tensor library and deep-learning framework for numerical computing, training, and inference. | How does a small end-to-end training example work, and what backend or hardware assumptions does it make? |
+| [Burn](https://burn.dev/docs/burn/) | A Rust deep-learning framework covering tensors, autodiff, neural-network modules, optimizers, training, and model storage; its documentation lists selectable backends [7](https://github.com/tracel-ai/burn). | Which minimal CPU backend and feature set give a small example with transparent dependencies? |
+| [Candle](https://github.com/huggingface/candle) | A minimalist ML framework for Rust with tensor and model examples [8](https://github.com/huggingface/candle). | Which operations and training components are supplied directly, and what must a small study implement itself? |
+| [`tch-rs`](https://github.com/LaurentMazare/tch-rs) | Rust bindings to the C++ API of PyTorch [9](https://github.com/LaurentMazare/tch-rs). | What does a binding approach make convenient, and what external LibTorch version and build setup does it require? |
+| [Linfa](https://rust-ml.github.io/linfa/rustdocs/linfa/) | A Rust toolkit centered on preprocessing and classical ML algorithms [10](https://rust-ml.github.io/linfa/rustdocs/linfa/). | Could a classical baseline provide a useful point of reference without being confused with a deep-learning framework? |
+| [SmartCore](https://github.com/smartcorelib/smartcore) | A Rust library for machine learning and numerical computing, including classical methods [11](https://github.com/smartcorelib/smartcore). | Which baseline is simple enough to explain and verify for a chosen task? |
 
-This is an initial reading list, not a complete survey. These short descriptions were checked against the upstream project pages on 22 November 2026; APIs, support, and maintenance status can change. This is not a compatibility test. Before an experiment, check the current release notes and record the crate versions, repository revision, enabled features, and environment. We will choose tools based on the question being investigated—not on a popularity contest or an unverified performance claim.
+The comparison should record the date checked, documentation version or repository revision, declared features, CPU path, dependencies, example quality, data-loading assumptions, and any environment requirements. The ecosystem changes quickly, so this table is a reading map, not a compatibility guarantee. No package is the project’s “winner” before an experiment and a stated selection criterion exist.
 
-## Learning roadmap
+## Proposed eight-week research plan
 
-The diagram below describes a **proposed learning loop**, not a shipped workflow. We want to start with fundamentals, try a focused Rust experiment, check it carefully, and write down the limits as well as the result.
+The detailed [research plan](RESEARCH-PLAN.md) structures the next two months as four two-week phases: foundations and method reading; framework reconnaissance; dataset, baseline, and protocol design; and a final synthesis with a resource-feasibility decision. Each week has a planned output and an exit criterion. The schedule is forward-looking. It must not be read as evidence that the review, implementation, or any experiment has already happened.
 
 <div align="center">
-  <img src="assets/rust-ml-research-loop.svg" alt="Arxh's proposed research loop: understand ML foundations, explore Rust tools, test evidence, and share results and open questions" width="100%" />
-  <p><em>A direction for future work; no Rust experiment or benchmark is published yet.</em></p>
+  <img src="assets/rust-ml-research-loop.svg" alt="Proposed Rust ML evidence loop: define a claim, choose a method, fix the test, then report evidence and limits; not implemented" width="100%" />
+  <p><sub>Proposed method only. The current repository has no Rust ML implementation or benchmark result.</sub></p>
 </div>
 
-### A possible first experiment
+An experiment should pass a resource gate before anyone builds or trains a model: confirm that an appropriate existing machine and permitted software are available at no cost; identify the dataset and its license; define the split, baseline, metric, random seeds, and correctness checks; and record the precise dependencies and commands. If the gate fails, keep the deliverable at the level of literature notes and an experiment specification. Do not infer access to a GPU or a cloud account from the subject matter of the project.
 
-A useful first experiment should be small enough that the result can be checked by hand or against a simple independent reference. For example, a basic regression or classification task could help us examine data representation, numerical operations, metrics, and the shape of a Rust development loop without requiring a large model or dataset.
+## Research protocol and evidence standards
 
-Before choosing the exact task, we will need to identify a suitable dataset, check its license and provenance, define a baseline, and decide what output can be verified. The experiment should then be small enough to rerun on an ordinary development machine. If the first attempt exposes a missing concept or a limitation in the tooling, that is a useful research result—not something to hide.
+Any future experiment proposal should begin with one testable question, a task definition, and a result that could falsify the working expectation. The protocol should state the data source, terms, preprocessing, split, model and parameter count where practical, initialization, optimizer, loss, hyperparameters, seeds, software versions, hardware, and exact run command. If the experiment is not run, these fields remain a plan rather than being filled with invented values.
 
-## How we want to run experiments
+Correctness is checked before speed. For a classification example, that could include tensor-shape assertions, a tiny hand-checkable forward pass, stable loss behavior on a controlled input, and confirmation that evaluation uses the declared hold-out split. Runtime should be measured only after the output is correct, with the measurement boundary and warm-up policy stated. Repeated runs, error bars, and all relevant failures should be reported when feasible; a single run is a case study, not a stable estimate. A performance comparison is not meaningful when workloads, hardware, library versions, data movement, or timing boundaries differ without disclosure.
 
-A result is only meaningful when another person can understand what was run and what the numbers mean. For each future experiment, we intend to record:
+The project will treat provenance and reproducibility as part of the method. Dataset and software versions should be identified, and externally sourced assets should keep their creators, source pages, and terms with them. The NeurIPS checklist provides prompts for experiment reproducibility, code and data access, compute disclosure, and asset attribution [12](https://neurips.cc/Conferences/2021/PaperInformation/PaperChecklist). MLPerf Tiny’s rules are a useful separate reference for benchmark consistency and reproducibility [13](https://github.com/mlcommons/tiny/blob/master/benchmark/MLPerfTiny_Rules.adoc); Arxh is not an MLPerf participant, and this project does not claim compliance with that benchmark.
 
-- the question and task definition, including what would count as a correct result
-- the dataset source, license, preprocessing steps, and any fixed train/test split
-- the Rust toolchain, crate versions, `Cargo.lock`, enabled features, and exact command
-- the baseline and metric, including any tolerance used for floating-point comparisons
-- the random seed and number of repeated runs, where applicable
-- the hardware and relevant software environment
-- correctness checks separately from runtime or throughput measurements
-- failures, limitations, and changes to the next attempt
+## Technical visuals and image credits
 
-We will check correctness before drawing conclusions about speed. Any performance comparison needs the same task, comparable hardware, clear measurement boundaries, and enough context to interpret the result. A single timing or a successful compile is not evidence that one framework or language is generally faster.
+The visual direction is intentionally technical rather than generic: two real macro photographs of circuit-board components, plus original SVG schematics of neural-network methods and a proposed research process. The photographs are source-verified stock photos rather than image-generation-model output; the diagrams are direct vector schematics, not generated photos. The selected photographs contain no visible people or faces. There is no data-center image, staged portrait, or fabricated code screen in the gallery. The hardware photos are illustrative only; they are not Arxh equipment and do not show compute used for a result.
 
-## What is currently in this repository
+<div align="center">
+  <img src="assets/compute-hardware-6636476.jpg" alt="Real macro photograph of a microprocessor on a blue motherboard; no people or faces are visible" width="49%" />
+  <img src="assets/circuit-board-macro-34924856.jpg" alt="Real warm-toned macro photograph of electronic components on a circuit board; no people or faces are visible" width="49%" />
+  <p><sub>Photographs by <a href="https://www.pexels.com/@sejio402/">Sergei Starostin</a> and <a href="https://www.pexels.com/@iohichu/">Ivan Chumak</a> on Pexels. Hardware context only—not Arxh compute. See the <a href="assets/README.md">asset register</a> for source pages and license notes.</sub></p>
+</div>
 
-This repository is still in its documentation and planning stage. There is no `Cargo.toml`, Rust source tree, model implementation, or ML experiment runner here yet.
+The full [asset register](assets/README.md) records each photographer, original Pexels page, license, local image size, and intended use. Pexels describes the photos as free to use under its license, allows modifications, and says attribution is appreciated but not required; this is not the same as public-domain status. The hand-authored diagrams are conceptual, not copied paper figures, and are labeled as schematics rather than evidence.
 
-The existing [`tests/`](tests/README.md) directory contains an exploratory 30-scenario task set from the project's earlier, general AI-agent evaluation direction. Those scenarios cover research, file work, coding, multimodal tasks, and computer use; **they are not Rust machine-learning experiments**. The task set has no recorded results and is not a validated benchmark. It remains documented as an earlier research artifact while the project clarifies its next direction.
+## What is in this repository
 
-The distinction matters: a roadmap describes what we may investigate; an experiment describes what we actually ran; a result should be published only when there is evidence to support it.
+- `README.md` — project status, research scope, initial literature map, and method overview.
+- [`RESEARCH-PLAN.md`](RESEARCH-PLAN.md) — proposed eight-week/two-month agenda, study questions, feasibility gate, and planned deliverables.
+- [`assets/`](assets/README.md) — documented image credits, licenses, and original SVG diagrams.
+- [`CONTRIBUTING.md`](CONTRIBUTING.md) — contribution and evidence expectations.
+- [`tests/`](tests/README.md) — a separate, exploratory 30-scenario suite from an earlier general AI-agent evaluation direction.
 
-## Contributing
-
-Arxh is a learning-in-public project, and thoughtful contributions are welcome from Rust developers, ML practitioners, researchers, students, and people who are learning the field. You do not need to arrive with a finished answer. A careful question, a correction backed by a primary source, or a small reproducible example can be just as useful as a larger implementation.
-
-Good places to start include:
-
-- reviewing the Rust ML library notes and suggesting a relevant primary source or missing trade-off
-- proposing a small experiment with a clear question, dataset, baseline, and way to check the output
-- building a minimal Rust example with its dependency versions and reproduction steps
-- improving the existing task descriptions while keeping them clearly separate from Rust ML experiments
-- documenting a limitation, failed attempt, or setup issue that another learner might encounter
-
-For substantial changes, please open an issue first so the goal and scope are clear. The [contributor guide](CONTRIBUTING.md) explains what to include in research notes and experiment pull requests. We will not add contributor names or claim results on someone's behalf; credit should follow actual contributions and their authors' preferences.
+The 30 scenarios cover general research, file work, coding, multimodal tasks, and computer use. They have no recorded results and are not a Rust ML experiment, deep-learning benchmark, or validated agent score. They remain clearly separated from the research plan; changing or documenting them does not count as model work.
 
 ## References
 
-### Rust machine-learning projects
+1. Rumelhart, Hinton, and Williams, “Learning representations by back-propagating errors,” *Nature* (1986): [1](https://www.nature.com/articles/323533a0).
+2. Glorot and Bengio, “Understanding the difficulty of training deep feedforward neural networks,” PMLR (2010): [2](https://proceedings.mlr.press/v9/glorot10a.html).
+3. LeCun et al., “Gradient-Based Learning Applied to Document Recognition,” *Proceedings of the IEEE* (1998): [3](https://doi.org/10.1109/5.726791).
+4. He et al., “Deep Residual Learning for Image Recognition,” CVPR (2016): [4](https://openaccess.thecvf.com/content_cvpr_2016/html/He_Deep_Residual_Learning_CVPR_2016_paper.html).
+5. Vaswani et al., “Attention Is All You Need,” arXiv:1706.03762 (2017): [5](https://arxiv.org/abs/1706.03762).
+6. Goodfellow, Bengio, and Courville, *Deep Learning*, MIT Press (2016): [6](https://www.deeplearningbook.org/).
+7. Burn documentation and repository: [7](https://github.com/tracel-ai/burn).
+8. Candle repository: [8](https://github.com/huggingface/candle).
+9. `tch-rs` repository: [9](https://github.com/LaurentMazare/tch-rs).
+10. Linfa documentation: [10](https://rust-ml.github.io/linfa/rustdocs/linfa/).
+11. SmartCore repository: [11](https://github.com/smartcorelib/smartcore).
+12. NeurIPS 2021 Paper Checklist Guidelines: [12](https://neurips.cc/Conferences/2021/PaperInformation/PaperChecklist).
+13. MLPerf Tiny inference rules: [13](https://github.com/mlcommons/tiny/blob/master/benchmark/MLPerfTiny_Rules.adoc).
 
-- [Burn — repository and documentation](https://github.com/tracel-ai/burn)
-- [Candle — repository and documentation](https://github.com/huggingface/candle)
-- [Linfa — repository and documentation](https://github.com/rust-ml/linfa)
-
-### Evaluation and reproducibility reading
-
-- [OpenAI — Evaluate agent workflows](https://developers.openai.com/api/docs/guides/agent-evals)
-- [OpenAI — Evaluation best practices](https://developers.openai.com/api/docs/guides/evaluation-best-practices)
-- [Anthropic — Define success criteria and build evaluations](https://docs.anthropic.com/en/docs/test-and-evaluate/define-success)
-- [Inspect AI documentation](https://inspect.aisi.org.uk/)
-
-These references inform the learning plan; they do not imply that Arxh has implemented or independently validated the referenced tools, methods, or benchmarks.
+The source pages above were consulted as an initial literature and documentation scan on 22 November 2026. This is not a systematic review, compatibility test, or independent audit of the projects.
 
 ## License
 
-There is currently no `LICENSE` file in this repository. No open-source reuse license has been granted; please do not assume the contents are licensed for reuse. A license should be chosen before external reuse is encouraged.
+There is currently no `LICENSE` file in this repository. Do not assume that the repository’s text, diagrams, or source code have been granted an open-source reuse license. The Pexels photographs have their own stated Pexels terms; those terms do not license the rest of the repository. Please check the [asset register](assets/README.md) and applicable source terms before reusing any material.
