@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 520" role="img" aria-labelledby="title desc">
-  <title id="title">Proposed evidence loop for a Rust deep-learning study</title>
-  <desc id="desc">A clean four-stage research plan: define one question, choose a neural-network method, specify the data and test, then report correctness, repeatability, resources, and limitations. This is a proposed process only; Arxh has no implementation or measured ML results yet.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">A proposed Rust-first workflow for an ML experiment</title>
+  <desc id="desc">Four proposed stages for future Rust ML work: author a crate, check types and borrowing, test known inputs, then record versions and the exact command. The diagram is a plan only; no Rust ML implementation exists in the repository.</desc>
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0 0L10 5L0 10Z" fill="#7b8da5" />
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#7188a6" />
     </marker>
     <style>
       .sans { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
@@ -11,58 +11,66 @@
     </style>
   </defs>
 
-  <rect width="1280" height="520" rx="22" fill="#f5f7fb" />
-  <text class="mono" x="64" y="62" font-size="13" font-weight="700" letter-spacing="1.5" fill="#087e8b">ARXH / PROPOSED RESEARCH METHOD</text>
-  <text class="sans" x="64" y="112" font-size="32" font-weight="700" fill="#142136">From method to evidence</text>
-  <text class="sans" x="64" y="144" font-size="16" fill="#4e5d72">A small Rust ML study should make its question, constraints, and checks visible.</text>
+  <rect width="1920" height="1080" rx="32" fill="#f5f7fb" />
+  <text class="mono" x="96" y="94" font-size="23" font-weight="700" letter-spacing="3" fill="#b94c31">ARXH / RUST DEVELOPMENT METHOD</text>
+  <text class="sans" x="96" y="168" font-size="58" font-weight="700" fill="#142136">A Rust-first experiment path</text>
+  <text class="sans" x="96" y="218" font-size="25" fill="#506078">Use the language toolchain to make assumptions, errors, and checks visible.</text>
 
-  <path d="M332 274H366M632 274H666M932 274H966" fill="none" stroke="#7b8da5" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M520 548H574M960 548H1014M1400 548H1454" fill="none" stroke="#7188a6" stroke-width="4" marker-end="url(#arrow)" />
 
   <g>
-    <rect x="64" y="190" width="268" height="178" rx="12" fill="#ffffff" stroke="#d9e1ec" />
-    <rect x="64" y="190" width="4" height="178" rx="2" fill="#147d92" />
-    <text class="mono" x="88" y="226" font-size="12" font-weight="700" fill="#147d92">01 / QUESTION</text>
-    <text class="sans" x="88" y="263" font-size="21" font-weight="700" fill="#142136">Define the claim</text>
-    <text class="sans" x="88" y="296" font-size="14" fill="#4e5d72">One task. One observable</text>
-    <text class="sans" x="88" y="318" font-size="14" fill="#4e5d72">question. One way to check it.</text>
-    <text class="mono" x="88" y="348" font-size="11" fill="#7b8798">WHAT WOULD CHANGE OUR MIND?</text>
+    <rect x="96" y="314" width="424" height="458" rx="20" fill="#ffffff" stroke="#d8e0eb" stroke-width="2" />
+    <rect x="96" y="314" width="8" height="458" rx="4" fill="#d75d3e" />
+    <text class="mono" x="136" y="376" font-size="20" font-weight="700" fill="#b94c31">01 / AUTHOR</text>
+    <text class="sans" x="136" y="434" font-size="36" font-weight="700" fill="#142136">Start with a crate</text>
+    <rect x="136" y="478" width="344" height="142" rx="12" fill="#101a2a" />
+    <text class="mono" x="164" y="530" font-size="24" fill="#f4f7fb">Cargo.toml</text>
+    <text class="mono" x="164" y="574" font-size="24" fill="#9de2d2">src/main.rs</text>
+    <text class="sans" x="136" y="674" font-size="22" fill="#56657a">Declare dependencies and edition.</text>
+    <text class="sans" x="136" y="710" font-size="22" fill="#56657a">Keep the research question small.</text>
   </g>
 
   <g>
-    <rect x="366" y="190" width="266" height="178" rx="12" fill="#ffffff" stroke="#d9e1ec" />
-    <rect x="366" y="190" width="4" height="178" rx="2" fill="#3465a4" />
-    <text class="mono" x="390" y="226" font-size="12" font-weight="700" fill="#3465a4">02 / METHOD</text>
-    <text class="sans" x="390" y="263" font-size="21" font-weight="700" fill="#142136">Choose a method</text>
-    <text class="sans" x="390" y="296" font-size="14" fill="#4e5d72">MLP · CNN · attention</text>
-    <text class="sans" x="390" y="318" font-size="14" fill="#4e5d72">are candidates to study.</text>
-    <text class="mono" x="390" y="348" font-size="11" fill="#7b8798">NOT A RESULT OR A WINNER</text>
+    <rect x="576" y="314" width="384" height="458" rx="20" fill="#ffffff" stroke="#d8e0eb" stroke-width="2" />
+    <rect x="576" y="314" width="8" height="458" rx="4" fill="#436fae" />
+    <text class="mono" x="616" y="376" font-size="20" font-weight="700" fill="#315d98">02 / CHECK</text>
+    <text class="sans" x="616" y="434" font-size="36" font-weight="700" fill="#142136">Ask rustc</text>
+    <rect x="616" y="478" width="304" height="94" rx="12" fill="#101a2a" />
+    <text class="mono" x="646" y="536" font-size="28" fill="#c6d9fb">cargo check</text>
+    <text class="sans" x="616" y="634" font-size="22" fill="#56657a">Types · borrowing · errors</text>
+    <text class="sans" x="616" y="674" font-size="22" fill="#56657a">A successful check is not</text>
+    <text class="sans" x="616" y="710" font-size="22" fill="#56657a">evidence of model correctness.</text>
   </g>
 
   <g>
-    <rect x="666" y="190" width="266" height="178" rx="12" fill="#ffffff" stroke="#d9e1ec" />
-    <rect x="666" y="190" width="4" height="178" rx="2" fill="#b46a1d" />
-    <text class="mono" x="690" y="226" font-size="12" font-weight="700" fill="#9a5b18">03 / PROTOCOL</text>
-    <text class="sans" x="690" y="263" font-size="21" font-weight="700" fill="#142136">Fix the test</text>
-    <text class="sans" x="690" y="296" font-size="14" fill="#4e5d72">Data · split · seed · baseline</text>
-    <text class="sans" x="690" y="318" font-size="14" fill="#4e5d72">and resource limit come first.</text>
-    <text class="mono" x="690" y="348" font-size="11" fill="#7b8798">CHECK CORRECTNESS BEFORE SPEED</text>
+    <rect x="1016" y="314" width="384" height="458" rx="20" fill="#ffffff" stroke="#d8e0eb" stroke-width="2" />
+    <rect x="1016" y="314" width="8" height="458" rx="4" fill="#25806c" />
+    <text class="mono" x="1056" y="376" font-size="20" font-weight="700" fill="#26725f">03 / TEST</text>
+    <text class="sans" x="1056" y="434" font-size="36" font-weight="700" fill="#142136">Use known inputs</text>
+    <rect x="1056" y="478" width="304" height="94" rx="12" fill="#101a2a" />
+    <text class="mono" x="1086" y="536" font-size="28" fill="#a8eadc">cargo test</text>
+    <text class="sans" x="1056" y="634" font-size="22" fill="#56657a">Known values · edge cases</text>
+    <text class="sans" x="1056" y="674" font-size="22" fill="#56657a">Check data handling before</text>
+    <text class="sans" x="1056" y="710" font-size="22" fill="#56657a">any timing claim.</text>
   </g>
 
   <g>
-    <rect x="966" y="190" width="250" height="178" rx="12" fill="#ffffff" stroke="#d9e1ec" />
-    <rect x="966" y="190" width="4" height="178" rx="2" fill="#26744f" />
-    <text class="mono" x="990" y="226" font-size="12" font-weight="700" fill="#26744f">04 / EVIDENCE</text>
-    <text class="sans" x="990" y="263" font-size="21" font-weight="700" fill="#142136">Report the limits</text>
-    <text class="sans" x="990" y="296" font-size="14" fill="#4e5d72">Correctness · repeats · runtime</text>
-    <text class="sans" x="990" y="318" font-size="14" fill="#4e5d72">resources · failures · unknowns</text>
-    <text class="mono" x="990" y="348" font-size="11" fill="#7b8798">NO CLAIM WITHOUT A RUN</text>
+    <rect x="1456" y="314" width="368" height="458" rx="20" fill="#ffffff" stroke="#d8e0eb" stroke-width="2" />
+    <rect x="1456" y="314" width="8" height="458" rx="4" fill="#aa752a" />
+    <text class="mono" x="1496" y="376" font-size="20" font-weight="700" fill="#93611f">04 / RECORD</text>
+    <text class="sans" x="1496" y="434" font-size="36" font-weight="700" fill="#142136">Pin the setup</text>
+    <rect x="1496" y="478" width="288" height="142" rx="12" fill="#101a2a" />
+    <text class="mono" x="1524" y="530" font-size="23" fill="#f4f7fb">rustc --version</text>
+    <text class="mono" x="1524" y="574" font-size="23" fill="#f0c46b">Cargo.lock</text>
+    <text class="sans" x="1496" y="674" font-size="22" fill="#56657a">Record the command, data,</text>
+    <text class="sans" x="1496" y="710" font-size="22" fill="#56657a">machine, and limitations.</text>
   </g>
 
-  <path d="M1090 386V414H190V386" fill="none" stroke="#9aa8b9" stroke-width="1.5" stroke-dasharray="5 6" marker-end="url(#arrow)" />
-  <text class="sans" x="640" y="407" text-anchor="middle" font-size="12" fill="#617084">Use evidence and open questions to refine the next question</text>
+  <path d="M1640 814V850H280V814" fill="none" stroke="#9aa9bc" stroke-width="3" stroke-dasharray="9 11" marker-end="url(#arrow)" />
+  <text class="sans" x="960" y="840" text-anchor="middle" font-size="20" fill="#617084">Use the evidence to refine the next question</text>
 
-  <rect x="64" y="438" width="1152" height="48" rx="10" fill="#eaf2f5" />
-  <circle cx="87" cy="462" r="5" fill="#0c8792" />
-  <text class="sans" x="103" y="467" font-size="13" font-weight="700" fill="#234052">PROPOSED ONLY</text>
-  <text class="sans" x="236" y="467" font-size="13" fill="#46586a">No Rust ML implementation, trained model, or benchmark result is published in this repository.</text>
+  <rect x="96" y="892" width="1728" height="104" rx="18" fill="#e8eef5" />
+  <circle cx="136" cy="944" r="10" fill="#d75d3e" />
+  <text class="mono" x="164" y="938" font-size="18" font-weight="700" fill="#744630">PROPOSED WORKFLOW ONLY</text>
+  <text class="sans" x="164" y="972" font-size="20" fill="#4c5d72">No Cargo project, tested Rust ML implementation, or benchmark result is present in this repository.</text>
 </svg>
