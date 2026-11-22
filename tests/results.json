@@ -1,8 +1,9 @@
 {
   "suite": "arxh-test-suite",
-  "description": "Recorded results for Arx-h public evaluations. Only measured outcomes belong here. Fields left as null mean the task has not been run yet.",
+  "description": "Outcome ledger for Arxh agent evaluations. Record measured outcomes only; null means the task has not been run or the field has not been recorded.",
   "fields": {
     "status": ["PASS", "PARTIAL", "FAIL"],
+    "week_status": ["not_started", "in_progress", "complete"],
     "verified": ["yes", "no", "partial"],
     "intervention": ["none", "minor", "significant"],
     "recovered": ["not needed", "recovered", "failed to recover"]
@@ -10,8 +11,8 @@
   "weeks": [
     {
       "week": "week-01",
-      "label": "Week 01 — first structured public test",
-      "status": "in_progress",
+      "label": "Week 01 — initial public evaluation",
+      "status": "not_started",
       "started_at": null,
       "completed_at": null,
       "summary": null,

@@ -1,8 +1,8 @@
-# Week 01 Report
+# Week 01 Evaluation Report
 
-This report summarizes the first public testing period for Arx-h.
+Use this template to summarize Arxh's first structured evaluation run. Complete it only after the tasks have been run and their outcomes checked; until then, the sections below are prompts, not findings.
 
-Raw per-task results live in [`../results.json`](../results.json). Category-level notes live in `research.md`, `files.md`, `coding.md`, `multimodal.md`, and `computer.md`.
+Per-task results belong in [`../results.json`](../results.json). Category-level notes live in `research.md`, `files.md`, `coding.md`, `multimodal.md`, and `computer.md`.
 
 ## What we tested
 
@@ -54,8 +54,6 @@ List the areas that need more testing.
 
 ## Next evaluation
 
-Week 02 will repeat important failed tests and introduce new tasks where needed.
+After reviewing Week 01 evidence, define the next evaluation: repeat important failure cases, add tasks for uncovered risks, and record any changes to the system under test.
 
-The goal is not to make the numbers look better.
-
-The goal is to understand whether the system is actually improving.
+The goal is not to make the numbers look better. It is to understand whether the system is improving and where uncertainty remains.
